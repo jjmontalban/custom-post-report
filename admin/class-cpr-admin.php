@@ -100,4 +100,21 @@ class Cpr_Admin {
 
 	}
 
+	public function add_menu() {
+		// add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
+		add_menu_page(
+			"Custom Post Report", // Título de la página
+			"Custom Reports", // Nombre de la opción
+			"manage_options",
+			'cpr-index', // Slug
+			array( $this, 'cpr_index' ), // Función que llama al pulsar
+			plugins_url( 'cpr/icon.svg' ) // Icono del menú
+		);
+	}
+	
+	public function cpr_index() {
+		include plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/cpr-admin-display.php';
+	}
+	
+
 }
