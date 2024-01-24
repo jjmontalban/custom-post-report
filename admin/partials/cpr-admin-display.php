@@ -14,3 +14,4 @@
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
+<p>Hola mundo desde un partials</p>
